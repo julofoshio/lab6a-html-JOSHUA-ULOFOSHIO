@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let guests = parseInt(prompt("How many guests are attending the party?"));
+let tables = parseInt(prompt("How many tables?"));
+let base = Math.floor(guests / tables);
+let extra = guests % tables;
+
+let message = `Your ${guests} guests will be seeated as follows: `;
+
+if (extra > 0) {
+  message += `${extra} tables of ${base + 1}`;
+  if(tables - extra> 0) {
+    message += `, and ${tables - extra} tables of ${base}`;
+  }
+} else {
+  message += `${tables} tables of ${base}`;
+}
+
+alert(message);
+  </script>
+</body>
+</html>
